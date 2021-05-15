@@ -1,4 +1,4 @@
-package com.example.kotlinproject
+package com.example.movie
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
