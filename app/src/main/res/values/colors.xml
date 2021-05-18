@@ -10,4 +10,8 @@
 
     <color name="purple_soft">#3f51b5</color>
     <color name="purple_deep">#303f9f</color>
+    
+    <color name="gray_bg">#E9E9E9</color>
+    <color name="gray_line">#C5C5C5</color>
+    <color name="orange_btn">#ff561d</color>
 </resources>
