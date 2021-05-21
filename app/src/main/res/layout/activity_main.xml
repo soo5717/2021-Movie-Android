@@ -92,13 +92,13 @@
                 android:text="액션 / 137분"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/imageView"
+                app:layout_constraintBottom_toTopOf="@+id/button_thumb_up"
                 app:layout_constraintEnd_toEndOf="@+id/textView2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textView2" />
 
             <ImageButton
-                android:id="@+id/imageView"
+                android:id="@+id/button_thumb_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
@@ -109,7 +109,7 @@
                 app:srcCompat="@drawable/selector_ic_thumb_up" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/text_view_thumb_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -117,24 +117,24 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
+                app:layout_constraintBottom_toBottomOf="@+id/button_thumb_up"
+                app:layout_constraintStart_toEndOf="@+id/button_thumb_up"
+                app:layout_constraintTop_toTopOf="@+id/button_thumb_up" />
 
             <ImageButton
-                android:id="@+id/imageView4"
+                android:id="@+id/button_thumb_down"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:background="@null"
                 android:contentDescription="@string/contentdesctiption"
-                app:layout_constraintBottom_toBottomOf="@+id/textView3"
-                app:layout_constraintStart_toEndOf="@+id/textView3"
-                app:layout_constraintTop_toTopOf="@+id/textView3"
+                app:layout_constraintBottom_toBottomOf="@+id/text_view_thumb_up"
+                app:layout_constraintStart_toEndOf="@+id/text_view_thumb_up"
+                app:layout_constraintTop_toTopOf="@+id/text_view_thumb_up"
                 app:srcCompat="@drawable/selector_ic_thumb_down" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/text_view_thumb_down"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -142,9 +142,9 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toTopOf="@+id/imageView4" />
+                app:layout_constraintBottom_toBottomOf="@+id/button_thumb_down"
+                app:layout_constraintStart_toEndOf="@+id/button_thumb_down"
+                app:layout_constraintTop_toTopOf="@+id/button_thumb_down" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
