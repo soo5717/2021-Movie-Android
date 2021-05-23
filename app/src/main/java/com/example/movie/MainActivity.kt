@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.movie.data.Comment
 import com.example.movie.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,9 +15,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initView()
         initButton()
     }
 
+    // 뷰 초기화 메서드
+    private fun initView() {
+        // 한줄평 리사이클러뷰
+        val adapter = CommentAdapter()
+
+        // 테스트 아이템
+        adapter.items.add(Comment("abc123", "10분전", "적당히 재밌다. 오랜만에 잠 안오는 영화 봤네요.", "추천 0", 3.0f))
+        adapter.items.add(Comment("def123", "10분전", "적당히 재밌다. 오랜만에 잠 안오는 영화 봤네요.", "추천 0", 4.5f))
+
+        binding.recyclerView.adapter = adapter
+    }
 
     // 버튼 동작 초기화 메서드
     private fun initButton() {
