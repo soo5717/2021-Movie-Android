@@ -5,14 +5,14 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.movie.data.Comment
-import com.example.movie.databinding.ActivityMainBinding
+import com.example.movie.databinding.ActivityMovieDetailBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class MovieDetailActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMovieDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMovieDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initView()
