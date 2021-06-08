@@ -16,7 +16,6 @@ class MovieFragment : Fragment() {
     private var _binding: FragmentMovieBinding? = null
     private val binding get() = _binding!!
 
-    // TODO: Rename and change types of parameters
     private var imageId = 0
     private var title: String? = null
     private var info: String? = null
@@ -31,7 +30,7 @@ class MovieFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         _binding = FragmentMovieBinding.inflate(inflater, container, false)
         return binding.root
@@ -50,15 +49,6 @@ class MovieFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MovieFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic fun newInstance(imageId: Int, title: String?, info: String?) : MovieFragment =
                 MovieFragment().apply {
                     arguments = Bundle().apply {

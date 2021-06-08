@@ -5,16 +5,15 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class MoviePagerAdapter : FragmentStateAdapter {
-    constructor(fm: FragmentManager, lc: Lifecycle) : super(fm, lc)
+class MoviePagerAdapter(fm: FragmentManager, lc: Lifecycle) : FragmentStateAdapter(fm, lc) {
 
     override fun getItemCount(): Int = 3
 
     override fun createFragment(position: Int): Fragment {
-        var imageId: Int = 0
-        var title: String = ""
-        var info: String = ""
-        var fragment: MovieFragment? = null
+        val imageId: Int
+        val title: String
+        val info: String
+        val fragment: MovieFragment?
 
         when(position) {
             0 -> {
