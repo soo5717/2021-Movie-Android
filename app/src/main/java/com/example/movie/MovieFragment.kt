@@ -1,5 +1,6 @@
 package com.example.movie
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +42,10 @@ class MovieFragment : Fragment() {
         binding.imageView.setImageResource(imageId)
         binding.textViewTitle.text = title
         binding.textViewInfo.text = info
+        binding.buttonMovieDetail.setOnClickListener {
+            val intent = Intent(activity, MovieDetailActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroy() {
