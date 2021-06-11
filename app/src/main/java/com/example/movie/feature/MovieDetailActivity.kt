@@ -1,4 +1,4 @@
-package com.example.movie
+package com.example.movie.feature
 
 import android.os.Bundle
 import android.widget.ImageButton

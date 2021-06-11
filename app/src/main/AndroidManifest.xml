@@ -10,16 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_movie_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.movie">
-        <activity android:name=".SplashActivity"
-            android:theme="@style/SplashTheme"/>
-        <activity android:name=".MovieActivity">
+        <activity android:name=".feature.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MovieDetailActivity" />
+        <activity android:name=".feature.MovieActivity" />
+        <activity android:name=".feature.MovieDetailActivity" />
     </application>
 
 </manifest>
