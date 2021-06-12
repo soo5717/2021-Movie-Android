@@ -10,6 +10,8 @@ import com.example.movie.network.RetrofitBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class MovieActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMovieBinding
@@ -20,13 +22,14 @@ class MovieActivity : AppCompatActivity() {
         binding = ActivityMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        call.getMovieInfo(MovieAPI.API_KEY, "20210610").enqueue(object: Callback<MovieInfo> {
+        // 어제 날짜 구하기 (API >= 26 사용 가능)
+        val currentDateTime = LocalDate.now().minusDays(1)
+        val today = currentDateTime.format(DateTimeFormatter.BASIC_ISO_DATE)
+
+        call.getMovieInfo(MovieAPI.API_KEY, today).enqueue(object: Callback<MovieInfo> {
             override fun onResponse(call: Call<MovieInfo>, response: Response<MovieInfo>) {
                 if(response.isSuccessful) { // 200
                     val result = response.body()
-                    Log.d("결과 테스트",
-                        result?.boxOfficeResult?.dailyBoxOfficeList?.get(0)?.movieNm.toString()
-                    )
                 }
             }
 
