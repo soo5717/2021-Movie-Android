@@ -6,12 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.movie.config.MovieAPI
 import com.example.movie.data.BoxOffice
 import com.example.movie.data.Movie
+import com.example.movie.data.MovieInfo
 import com.example.movie.databinding.ActivityMovieBinding
 import com.example.movie.network.RetrofitBuilder
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -56,7 +60,7 @@ class MovieActivity : AppCompatActivity() {
             })*/
 
 
-/*        call.getBoxOffice(MovieAPI.API_KEY, targetDt).enqueue(object: Callback<BoxOffice> {
+        call.getBoxOffice(MovieAPI.API_KEY, targetDt).enqueue(object: Callback<BoxOffice> {
             override fun onResponse(call: Call<BoxOffice>, response: Response<BoxOffice>) {
                 if(response.isSuccessful) { // 200
                     val boxOfficeList = response.body()?.boxOfficeResult?.dailyBoxOfficeList
@@ -76,12 +80,12 @@ class MovieActivity : AppCompatActivity() {
                 Log.e("일별 박스오피스 요청 에러", t.message.toString())
             }
 
-        })*/
+        })
     }
 
     // 영화 상세 정보 요청
     private fun getMovieInfo(movieCd: String, movieNm: String, audiAcc: String) {
-/*        call.getMovieInfo(MovieAPI.API_KEY, movieCd).enqueue(object: Callback<MovieInfo> {
+        call.getMovieInfo(MovieAPI.API_KEY, movieCd).enqueue(object: Callback<MovieInfo> {
             override fun onResponse(call: Call<MovieInfo>, response: Response<MovieInfo>) {
                 if(response.isSuccessful) { // 200
                     val movieInfo = response.body()?.movieInfoResult?.movieInfo
@@ -96,7 +100,7 @@ class MovieActivity : AppCompatActivity() {
                 Log.e("영화 상세 정보 요청 에러", t.message.toString())
             }
 
-        })*/
+        })
     }
 
     override fun onDestroy() {

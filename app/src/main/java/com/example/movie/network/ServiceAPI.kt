@@ -13,12 +13,12 @@ interface ServiceAPI {
     fun getBoxOffice(
         @Query("key") key: String,
         @Query("targetDt") targetDt: String
-    ): Observable<BoxOffice>
+    ): Call<BoxOffice>
 
     // 영화 상세 정보
     @GET("movie/searchMovieInfo.json")
     fun getMovieInfo(
         @Query("key") key: String,
         @Query("movieCd") movieCd: String
-    ): Observable<MovieInfo>
+    ): Call<MovieInfo>
 }
