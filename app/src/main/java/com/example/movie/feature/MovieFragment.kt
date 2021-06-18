@@ -17,6 +17,7 @@ class MovieFragment : Fragment() {
     private var _binding: FragmentMovieBinding? = null
     private val binding get() = _binding!!
 
+    private var movieCd: String? = null
     private var imageId = 0
     private var title: String? = null
     private var info: String? = null
@@ -24,6 +25,7 @@ class MovieFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
+            movieCd = it.getString("movieCd")
             imageId = it.getInt("imageId")
             title = it.getString("title")
             info = it.getString("info")
@@ -44,6 +46,7 @@ class MovieFragment : Fragment() {
         binding.textViewInfo.text = info
         binding.buttonMovieDetail.setOnClickListener {
             val intent = Intent(activity, MovieDetailActivity::class.java)
+            intent.putExtra("movieCd", movieCd)
             startActivity(intent)
         }
     }
@@ -54,9 +57,10 @@ class MovieFragment : Fragment() {
     }
 
     companion object {
-        @JvmStatic fun newInstance(imageId: Int, title: String?, info: String?) : MovieFragment =
+        @JvmStatic fun newInstance(movieCd: String?, imageId: Int, title: String?, info: String?) : MovieFragment =
                 MovieFragment().apply {
                     arguments = Bundle().apply {
+                        putString("movieCd", movieCd)
                         putInt("imageId", imageId)
                         putString("title", title)
                         putString("info", info)

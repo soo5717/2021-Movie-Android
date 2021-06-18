@@ -5,10 +5,11 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.movie.R
-import com.example.movie.data.Movie
+import com.example.movie.data.BoxOffice
 
 class MoviePagerAdapter(fm: FragmentManager, lc: Lifecycle,
-                        private var data: ArrayList<Movie>) : FragmentStateAdapter(fm, lc) {
+                        private val data: ArrayList<BoxOffice.BoxOfficeResult.DailyBoxOffice> = ArrayList())
+    : FragmentStateAdapter(fm, lc) {
 
     override fun getItemCount(): Int = data.size
 
@@ -16,8 +17,8 @@ class MoviePagerAdapter(fm: FragmentManager, lc: Lifecycle,
         val movie = data[position]
         val imageId = R.drawable.image1
         val title = "${position + 1}. ${movie.movieNm}"
-        val info = "관객 수 ${movie.audiAcc} | ${movie.watchGradeNm}"
+        val info = "개봉일 ${movie.openDt} | 관객 수 ${movie.audiAcc}"
 
-        return MovieFragment.newInstance(imageId,title, info)
+        return MovieFragment.newInstance(movie.movieCd, imageId,title, info)
     }
 }
