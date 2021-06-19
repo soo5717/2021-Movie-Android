@@ -5,18 +5,27 @@ import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.movie.config.MovieAPI
 import com.example.movie.data.Comment
+import com.example.movie.data.MovieInfo
 import com.example.movie.databinding.ActivityMovieDetailBinding
+import com.example.movie.network.RetrofitBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MovieDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMovieDetailBinding
+    private val call = RetrofitBuilder.service
+
+    private var movieCd: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMovieDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val movieCd = intent.getStringExtra("movieCd")
+        movieCd = intent.getStringExtra("movieCd")
         Log.d("movieCd", movieCd.toString())
 
         initView()
@@ -25,6 +34,8 @@ class MovieDetailActivity : AppCompatActivity() {
 
     // 뷰 초기화 메서드
     private fun initView() {
+        if (movieCd != null)
+            getMovieInfo(movieCd.toString())
         // 한줄평 리사이클러뷰
         val adapter = CommentAdapter()
 
@@ -33,6 +44,22 @@ class MovieDetailActivity : AppCompatActivity() {
         adapter.items.add(Comment("def123", "10분전", "적당히 재밌다. 오랜만에 잠 안오는 영화 봤네요.", "추천 0", 4.5f))
 
         binding.recyclerView.adapter = adapter
+    }
+
+     // 영화 상세 정보 요청
+    private fun getMovieInfo(movieCd: String) {
+        call.getMovieInfo(MovieAPI.API_KEY, movieCd).enqueue(object: Callback<MovieInfo> {
+            override fun onResponse(call: Call<MovieInfo>, response: Response<MovieInfo>) {
+                if(response.isSuccessful) { // 200
+                    val result = response.body()
+                }
+            }
+
+            override fun onFailure(call: Call<MovieInfo>, t: Throwable) {
+                Log.e("영화 상세 정보 요청 에러", t.message.toString())
+            }
+
+        })
     }
 
     // 버튼 동작 초기화 메서드

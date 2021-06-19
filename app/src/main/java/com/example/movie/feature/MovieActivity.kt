@@ -48,24 +48,4 @@ class MovieActivity : AppCompatActivity() {
 
         })
     }
-
-    // 영화 상세 정보 요청
-//    private fun getMovieInfo(movieCd: String, movieNm: String, audiAcc: String) {
-//        call.getMovieInfo(MovieAPI.API_KEY, movieCd).enqueue(object: Callback<MovieInfo> {
-//            override fun onResponse(call: Call<MovieInfo>, response: Response<MovieInfo>) {
-//                if(response.isSuccessful) { // 200
-//                    val movieInfo = response.body()?.movieInfoResult?.movieInfo
-//                    val watchGradeNm = movieInfo?.audits?.get(0)?.watchGradeNm?: ""
-//                    movie.add(Movie("", movieNm, audiAcc, watchGradeNm))
-//                    Log.d("테스트", movieNm)
-////                    binding.viewPager.adapter = MoviePagerAdapter(supportFragmentManager, lifecycle, movie)
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<MovieInfo>, t: Throwable) {
-//                Log.e("영화 상세 정보 요청 에러", t.message.toString())
-//            }
-//
-//        })
-//    }
 }
