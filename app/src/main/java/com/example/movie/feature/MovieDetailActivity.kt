@@ -52,6 +52,8 @@ class MovieDetailActivity : AppCompatActivity() {
             override fun onResponse(call: Call<MovieInfo>, response: Response<MovieInfo>) {
                 if(response.isSuccessful) { // 200
                     val result = response.body()
+
+                    // 뷰 추가 필요함!!!
                 }
             }
 
