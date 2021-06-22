@@ -38,7 +38,7 @@
                 app:srcCompat="@drawable/image11" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textView_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -50,8 +50,8 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constrainedWidth="true"
-                app:layout_constraintBottom_toTopOf="@+id/textView2"
-                app:layout_constraintEnd_toStartOf="@id/imageView3"
+                app:layout_constraintBottom_toTopOf="@+id/textView2_open_date"
+                app:layout_constraintEnd_toStartOf="@id/imageView_watch_grade"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -59,33 +59,33 @@
                 app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView_watch_grade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="@string/contentdesctiption"
-                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textView"
-                app:layout_constraintTop_toTopOf="@+id/textView"
+                app:layout_constraintStart_toEndOf="@+id/textView_title"
+                app:layout_constraintTop_toTopOf="@+id/textView_title"
                 app:srcCompat="@drawable/ic_15" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView2_open_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2021.05.15 개봉"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView4"
-                app:layout_constraintEnd_toEndOf="@+id/imageView3"
+                app:layout_constraintBottom_toTopOf="@+id/textView_show_time"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_watch_grade"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView" />
+                app:layout_constraintStart_toStartOf="@+id/textView_title" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView_show_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
@@ -93,9 +93,9 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/button_thumb_up"
-                app:layout_constraintEnd_toEndOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="@+id/textView2_open_date"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView2" />
+                app:layout_constraintStart_toStartOf="@+id/textView2_open_date" />
 
             <ImageButton
                 android:id="@+id/button_thumb_up"
@@ -105,7 +105,7 @@
                 android:background="@null"
                 android:contentDescription="@string/contentdesctiption"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintStart_toStartOf="@+id/textView_show_time"
                 app:srcCompat="@drawable/selector_ic_thumb_up" />
 
             <TextView
@@ -169,7 +169,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/textView_rank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -193,7 +193,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textView6"
-                app:layout_constraintStart_toEndOf="@+id/textView9"
+                app:layout_constraintStart_toEndOf="@+id/textView_rank"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
             <View
@@ -268,7 +268,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/textView_total_watch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -355,7 +355,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/textView_director"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -378,7 +378,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/textView_actors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
