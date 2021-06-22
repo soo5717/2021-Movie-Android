@@ -50,7 +50,7 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constrainedWidth="true"
-                app:layout_constraintBottom_toTopOf="@+id/textView2_open_date"
+                app:layout_constraintBottom_toTopOf="@+id/textView_open_date"
                 app:layout_constraintEnd_toStartOf="@id/imageView_watch_grade"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintHorizontal_chainStyle="packed"
@@ -73,7 +73,7 @@
                 app:srcCompat="@drawable/ic_15" />
 
             <TextView
-                android:id="@+id/textView2_open_date"
+                android:id="@+id/textView_open_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2021.05.15 개봉"
@@ -93,9 +93,9 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/button_thumb_up"
-                app:layout_constraintEnd_toEndOf="@+id/textView2_open_date"
+                app:layout_constraintEnd_toEndOf="@+id/textView_open_date"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView2_open_date" />
+                app:layout_constraintStart_toStartOf="@+id/textView_open_date" />
 
             <ImageButton
                 android:id="@+id/button_thumb_up"

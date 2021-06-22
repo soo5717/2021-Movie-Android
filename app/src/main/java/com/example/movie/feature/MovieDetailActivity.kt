@@ -51,9 +51,16 @@ class MovieDetailActivity : AppCompatActivity() {
         call.getMovieInfo(MovieAPI.API_KEY, movieCd).enqueue(object: Callback<MovieInfo> {
             override fun onResponse(call: Call<MovieInfo>, response: Response<MovieInfo>) {
                 if(response.isSuccessful) { // 200
-                    val result = response.body()
+                    val result = response.body()?.movieInfoResult?.movieInfo
 
                     // 뷰 추가 필요함!!!
+                    if (result != null) {
+                        val openDate = "${result.openDt} 개봉"
+                        val showTime = "${result.genres[0].genreNm} / ${result.showTm} 분"
+                        binding.textViewTitle.text = result.movieNm
+                        binding.textViewOpenDate.text = openDate
+                        binding.textViewShowTime.text = showTime
+                    }
                 }
             }
 
