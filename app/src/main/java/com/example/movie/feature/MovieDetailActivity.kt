@@ -60,6 +60,9 @@ class MovieDetailActivity : AppCompatActivity() {
                         binding.textViewTitle.text = result.movieNm
                         binding.textViewOpenDate.text = openDate
                         binding.textViewShowTime.text = showTime
+
+                        //TODO 이미지 넣기 필요
+
                     }
                 }
             }
