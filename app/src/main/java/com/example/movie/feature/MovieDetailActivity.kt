@@ -19,6 +19,8 @@ class MovieDetailActivity : AppCompatActivity() {
     private val call = RetrofitBuilder.service
 
     private var movieCd: String? = null
+    private var rank: String? = null
+    private var totalWathc: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,8 @@ class MovieDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         movieCd = intent.getStringExtra("movieCd")
+        rank = intent.getStringExtra("rank")
+        totalWathc = intent.getStringExtra("totalWatch")
         Log.d("movieCd", movieCd.toString())
 
         initView()
@@ -60,6 +64,8 @@ class MovieDetailActivity : AppCompatActivity() {
                         binding.textViewTitle.text = result.movieNm
                         binding.textViewOpenDate.text = openDate
                         binding.textViewShowTime.text = showTime
+                        binding.textViewRank.text = rank
+                        binding.textViewTotalWatch.text = totalWathc
 
                         //TODO 이미지 넣기 필요
 

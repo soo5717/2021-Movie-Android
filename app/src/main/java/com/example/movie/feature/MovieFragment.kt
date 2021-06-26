@@ -21,6 +21,8 @@ class MovieFragment : Fragment() {
     private var imageId = 0
     private var title: String? = null
     private var info: String? = null
+    private var rank: String? = null
+    private var totalWatch: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,8 @@ class MovieFragment : Fragment() {
             imageId = it.getInt("imageId")
             title = it.getString("title")
             info = it.getString("info")
+            rank = it.getString("rank")
+            totalWatch = it.getString("totalWatch")
         }
     }
 
@@ -47,6 +51,8 @@ class MovieFragment : Fragment() {
         binding.buttonMovieDetail.setOnClickListener {
             val intent = Intent(activity, MovieDetailActivity::class.java)
             intent.putExtra("movieCd", movieCd)
+            intent.putExtra("rank", rank)
+            intent.putExtra("totalWatch", totalWatch)
             startActivity(intent)
         }
     }
@@ -57,13 +63,15 @@ class MovieFragment : Fragment() {
     }
 
     companion object {
-        @JvmStatic fun newInstance(movieCd: String?, imageId: Int, title: String?, info: String?) : MovieFragment =
+        @JvmStatic fun newInstance(movieCd: String?, imageId: Int, title: String?, info: String?, rank: String?, totalWatch: String?) : MovieFragment =
                 MovieFragment().apply {
                     arguments = Bundle().apply {
                         putString("movieCd", movieCd)
                         putInt("imageId", imageId)
                         putString("title", title)
                         putString("info", info)
+                        putString("rank", rank)
+                        putString("totalWatch", totalWatch)
                     }
                 }
     }
