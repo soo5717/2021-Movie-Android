@@ -17,7 +17,7 @@ class MoviePagerAdapter(fm: FragmentManager, lc: Lifecycle,
         val movie = data[position]
         val imageId = R.drawable.image1
         val title = "${position + 1}. ${movie.movieNm}"
-        val info = "개봉일 ${movie.openDt} | 관객 수 ${movie.audiAcc}"
+        val info = "관객 수 ${movie.audiAcc} | ${movie.openDt} 개봉"
         val rank = movie.rank
         val totalWatch = movie.audiAcc
 

@@ -20,7 +20,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
     private var movieCd: String? = null
     private var rank: String? = null
-    private var totalWathc: String? = null
+    private var totalWatch: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +29,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
         movieCd = intent.getStringExtra("movieCd")
         rank = intent.getStringExtra("rank")
-        totalWathc = intent.getStringExtra("totalWatch")
+        totalWatch = intent.getStringExtra("totalWatch")
         Log.d("movieCd", movieCd.toString())
 
         initView()
@@ -61,13 +61,22 @@ class MovieDetailActivity : AppCompatActivity() {
                     if (result != null) {
                         val openDate = "${result.openDt} 개봉"
                         val showTime = "${result.genres[0].genreNm} / ${result.showTm} 분"
+                        rank = "${rank}위"
+
+                        var actors = ""
+                        for (actor in result.actors) {
+                            actors += "${actor.peopleNm}, "
+                        }
+
                         binding.textViewTitle.text = result.movieNm
                         binding.textViewOpenDate.text = openDate
                         binding.textViewShowTime.text = showTime
                         binding.textViewRank.text = rank
-                        binding.textViewTotalWatch.text = totalWathc
+                        binding.textViewTotalWatch.text = totalWatch
+                        binding.textViewDirector.text = result.directors[0].peopleNm
+                        binding.textViewActors.text = actors.substring(0, actors.length - 2)
 
-                        //TODO 이미지 넣기 필요
+                        //TODO 이미지, 줄거리 넣기 필요
 
                     }
                 }
