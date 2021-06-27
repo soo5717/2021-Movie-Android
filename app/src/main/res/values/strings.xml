@@ -3,4 +3,18 @@
     <string name="contentdesctiption">contentDesctiption</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="movie_detail">영화 상세</string>
+    <string name="_15">15</string>
+    <string name="_1">1</string>
+    <string name="rank">예매율</string>
+    <string name="rating">평점</string>
+    <string name="_8_2">8.2</string>
+    <string name="totalWatch">누적관객수</string>
+    <string name="context">줄거리</string>
+    <string name="director">감독/출연</string>
+    <string name="directors">감독</string>
+    <string name="actors">출연</string>
+    <string name="review">한줄평</string>
+    <string name="new_reivew">작성하기</string>
+    <string name="all">모두보기</string>
+    <string name="get">예매하기</string>
 </resources>

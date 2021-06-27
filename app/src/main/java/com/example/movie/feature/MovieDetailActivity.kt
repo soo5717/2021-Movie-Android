@@ -62,6 +62,7 @@ class MovieDetailActivity : AppCompatActivity() {
                         val openDate = "${result.openDt} 개봉"
                         val showTime = "${result.genres[0].genreNm} / ${result.showTm} 분"
                         rank = "${rank}위"
+                        totalWatch = "${totalWatch}명"
 
                         var actors = ""
                         for (actor in result.actors) {
