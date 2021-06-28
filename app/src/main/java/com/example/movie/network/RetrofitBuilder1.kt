@@ -4,9 +4,9 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitBuilder {
+object RetrofitBuilder1 {
     private const val BASE_URL = "https://kobis.or.kr/kobisopenapi/webservice/rest/"
-    var service: ServiceAPI
+    var service: ServiceAPI1
 
     init {
         val retrofit = Retrofit.Builder()
@@ -15,6 +15,6 @@ object RetrofitBuilder {
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create()) // RxJava
             .build()
 
-        service = retrofit.create(ServiceAPI::class.java)
+        service = retrofit.create(ServiceAPI1::class.java)
     }
 }

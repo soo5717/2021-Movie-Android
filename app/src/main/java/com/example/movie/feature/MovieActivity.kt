@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.movie.config.MovieAPI
 import com.example.movie.data.BoxOffice
 import com.example.movie.databinding.ActivityMovieBinding
-import com.example.movie.network.RetrofitBuilder
+import com.example.movie.network.RetrofitBuilder1
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter
 
 class MovieActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMovieBinding
-    private val call = RetrofitBuilder.service
+    private val call = RetrofitBuilder1.service
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

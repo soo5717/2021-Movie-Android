@@ -7,7 +7,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface ServiceAPI {
+interface ServiceAPI1 {
     // 일별 박스오피스
     @GET("boxoffice/searchDailyBoxOfficeList.json")
     fun getBoxOffice(

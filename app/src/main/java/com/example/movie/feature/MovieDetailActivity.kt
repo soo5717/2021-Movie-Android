@@ -9,14 +9,14 @@ import com.example.movie.config.MovieAPI
 import com.example.movie.data.Comment
 import com.example.movie.data.MovieInfo
 import com.example.movie.databinding.ActivityMovieDetailBinding
-import com.example.movie.network.RetrofitBuilder
+import com.example.movie.network.RetrofitBuilder1
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MovieDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMovieDetailBinding
-    private val call = RetrofitBuilder.service
+    private val call = RetrofitBuilder1.service
 
     private var movieCd: String? = null
     private var rank: String? = null
